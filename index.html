@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitCheck - BMI Calculator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .marker {
+            transition: left 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7F4ED] text-[#26352A]">
+
+    <!-- NAVBAR -->
+    <header class="bg-[#26352A] text-white sticky top-0 z-50">
+
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <a href="#" class="text-2xl font-bold">
+                Fit<span class="text-[#D6A85F]">Check</span>
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm">
+
+                <a href="#calculator"
+                    class="hover:text-[#D6A85F] transition">
+                    Calculator
+                </a>
+
+                <a href="#guide"
+                    class="hover:text-[#D6A85F] transition">
+                    BMI Guide
+                </a>
+
+                <a href="#tips"
+                    class="hover:text-[#D6A85F] transition">
+                    Healthy Tips
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <div>
+
+                <div class="inline-block bg-[#E8DFD1] px-5 py-2 rounded-full mb-6">
+
+                    <span class="text-[#A56A2C] font-semibold text-sm">
+                        HEALTH & WELLNESS
+                    </span>
+
+                </div>
+
+
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+
+                    Know Your
+                    <span class="text-[#A56A2C]">
+                        BMI.
+                    </span>
+
+                    <br>
+
+                    Understand Your Body.
+
+                </h1>
+
+
+                <p class="text-gray-600 text-lg leading-8 mt-7 max-w-xl">
+
+                    Calculate your Body Mass Index in seconds and
+                    understand how your weight relates to your height.
+
+                </p>
+
+
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a href="#calculator"
+                        class="bg-[#A56A2C] text-white px-8 py-4 rounded-xl
+                        font-semibold hover:bg-[#7F4E20] transition">
+
+                        Calculate BMI
+
+                    </a>
+
+
+                    <a href="#guide"
+                        class="border border-[#26352A] px-8 py-4 rounded-xl
+                        font-semibold hover:bg-[#26352A]
+                        hover:text-white transition">
+
+                        BMI Guide
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO CARD -->
+            <div class="bg-[#26352A] rounded-[40px] p-8 md:p-12">
+
+                <div class="bg-[#F7F4ED] rounded-3xl p-8">
+
+                    <p class="text-gray-500 text-sm font-semibold tracking-widest">
+                        BMI CALCULATOR
+                    </p>
+
+
+                    <div class="mt-6">
+
+                        <span class="text-7xl font-bold text-[#A56A2C]">
+                            BMI
+                        </span>
+
+                        <p class="text-gray-500 mt-2">
+                            A simple way to understand your body measurement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-3 gap-3 mt-10">
+
+                        <div class="bg-[#E5EBD9] rounded-2xl p-4 text-center">
+
+                            <p class="text-2xl font-bold">
+                                18.5
+                            </p>
+
+                            <p class="text-xs text-gray-600 mt-1">
+                                Lower limit
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-[#DDE8D2] rounded-2xl p-4 text-center">
+
+                            <p class="text-2xl font-bold">
+                                24.9
+                            </p>
+
+                            <p class="text-xs text-gray-600 mt-1">
+                                Healthy limit
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-[#F0E3CC] rounded-2xl p-4 text-center">
+
+                            <p class="text-2xl font-bold">
+                                30+
+                            </p>
+
+                            <p class="text-xs text-gray-600 mt-1">
+                                Higher range
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-8">
+
+                        <div class="flex h-6 rounded-full overflow-hidden">
+
+                            <div class="w-1/4 bg-[#75965E]"></div>
+
+                            <div class="w-1/4 bg-[#A9BD73]"></div>
+
+                            <div class="w-1/4 bg-[#D6A85F]"></div>
+
+                            <div class="w-1/4 bg-[#B75D5D]"></div>
+
+                        </div>
+
+
+                        <div class="flex justify-between text-xs
+                                    text-gray-500 mt-2">
+
+                            <span>Under</span>
+                            <span>Healthy</span>
+                            <span>Over</span>
+                            <span>Obesity</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+    <section id="calculator"
+        class="bg-[#E8DFD1] py-20 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-[#A56A2C] font-bold tracking-widest text-sm">
+                    BMI CALCULATOR
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                    Calculate Your BMI
+                </h2>
+
+                <p class="text-gray-600 mt-4">
+                    Enter your age, height and weight.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-[35px] shadow-xl overflow-hidden">
+
+                <div class="grid lg:grid-cols-2">
+
+
+                    <!-- FORM -->
+                    <div class="p-8 md:p-12">
+
+                        <h3 class="text-2xl font-bold mb-8">
+                            Your Details
+                        </h3>
+
+
+                        <!-- AGE -->
+                        <div class="mb-6">
+
+                            <label class="block font-semibold mb-3">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                placeholder="Enter your age"
+                                class="w-full px-5 py-4 rounded-xl border
+                                border-gray-300 outline-none
+                                focus:border-[#A56A2C]">
+
+                        </div>
+
+
+                        <!-- HEIGHT -->
+                        <div class="mb-6">
+
+                            <label class="block font-semibold mb-3">
+                                Height
+                            </label>
+
+                            <div class="relative">
+
+                                <input
+                                    type="number"
+                                    id="height"
+                                    placeholder="Enter your height"
+                                    class="w-full px-5 py-4 pr-16 rounded-xl
+                                    border border-gray-300 outline-none
+                                    focus:border-[#A56A2C]">
+
+                                <span class="absolute right-5 top-1/2
+                                    -translate-y-1/2 text-gray-500">
+                                    cm
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- WEIGHT -->
+                        <div class="mb-8">
+
+                            <label class="block font-semibold mb-3">
+                                Weight
+                            </label>
+
+                            <div class="relative">
+
+                                <input
+                                    type="number"
+                                    id="weight"
+                                    placeholder="Enter your weight"
+                                    class="w-full px-5 py-4 pr-16 rounded-xl
+                                    border border-gray-300 outline-none
+                                    focus:border-[#A56A2C]">
+
+                                <span class="absolute right-5 top-1/2
+                                    -translate-y-1/2 text-gray-500">
+                                    kg
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ERROR -->
+                        <p id="error"
+                            class="hidden text-red-600 text-sm mb-5">
+                        </p>
+
+
+                        <!-- BUTTONS -->
+                        <div class="grid sm:grid-cols-2 gap-3">
+
+                            <button
+                                onclick="calculateBMI()"
+                                class="bg-[#26352A] text-white py-4
+                                rounded-xl font-semibold
+                                hover:bg-[#18221B] transition">
+
+                                Calculate BMI
+
+                            </button>
+
+
+                            <button
+                                onclick="resetCalculator()"
+                                class="border border-gray-300 py-4
+                                rounded-xl font-semibold
+                                hover:bg-gray-100 transition">
+
+                                Reset
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESULT -->
+                    <div class="bg-[#26352A] text-white p-8 md:p-12">
+
+                        <div class="h-full flex items-center">
+
+                            <div class="w-full text-center">
+
+                                <p class="text-gray-400 text-sm
+                                    uppercase tracking-widest">
+                                    Your Result
+                                </p>
+
+
+                                <div id="bmiValue"
+                                    class="text-7xl md:text-8xl
+                                    font-bold text-[#D6A85F] mt-5">
+
+                                    --
+
+                                </div>
+
+
+                                <div id="bmiCategory"
+                                    class="text-2xl font-bold mt-4">
+
+                                    Enter your details
+
+                                </div>
+
+
+                                <p id="bmiMessage"
+                                    class="text-gray-400 leading-7 mt-4">
+
+                                    Your BMI result will appear here.
+
+                                </p>
+
+
+                                <!-- BMI SCALE -->
+                                <div class="mt-12">
+
+                                    <div class="relative">
+
+                                        <div class="flex h-6 rounded-full overflow-hidden">
+
+                                            <div class="w-1/4 bg-[#75965E]"></div>
+
+                                            <div class="w-1/4 bg-[#A9BD73]"></div>
+
+                                            <div class="w-1/4 bg-[#D6A85F]"></div>
+
+                                            <div class="w-1/4 bg-[#B75D5D]"></div>
+
+                                        </div>
+
+
+                                        <div id="marker"
+                                            class="marker absolute -top-2
+                                            w-10 h-10 rounded-full bg-white
+                                            border-4 border-[#26352A]
+                                            shadow-lg"
+                                            style="left: 0%;">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="grid grid-cols-4 gap-1
+                                        text-[11px] text-gray-400 mt-4">
+
+                                        <span>Underweight</span>
+                                        <span>Healthy</span>
+                                        <span>Overweight</span>
+                                        <span>Obesity</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- RANGE -->
+                                <div class="bg-[#34463A]
+                                    rounded-2xl p-5 mt-10">
+
+                                    <p class="text-gray-400 text-sm">
+                                        General healthy adult BMI range
+                                    </p>
+
+                                    <p class="text-[#D6A85F]
+                                        text-3xl font-bold mt-2">
+                                        18.5 – 24.9
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BMI GUIDE -->
+    <section id="guide"
+        class="max-w-7xl mx-auto px-6 py-20">
+
+        <div class="text-center mb-12">
+
+            <p class="text-[#A56A2C] font-bold tracking-widest text-sm">
+                BMI GUIDE
+            </p>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                Understanding BMI
+            </h2>
+
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                BMI is commonly divided into four general categories
+                for adults.
+            </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+            <!-- UNDERWEIGHT -->
+            <div class="bg-[#E5EBD9] rounded-3xl p-7
+                border border-[#D4DDC7]
+                hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 rounded-2xl bg-[#75965E]
+                    text-white flex items-center justify-center
+                    text-xl font-bold">
+                    01
+                </div>
+
+
+                <h3 class="text-2xl font-bold mt-6">
+                    Underweight
+                </h3>
+
+
+                <p class="text-[#557744] font-bold text-lg mt-2">
+                    Below 18.5
+                </p>
+
+
+                <div class="w-full h-px bg-[#CCD7BF] my-5"></div>
+
+
+                <p class="text-gray-600 text-sm leading-7">
+                    A BMI below 18.5 is generally classified as
+                    underweight for adults.
+                </p>
+
+            </div>
+
+
+            <!-- HEALTHY -->
+            <div class="bg-[#DDE8D2] rounded-3xl p-7
+                border border-[#C8D8B8]
+                hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 rounded-2xl bg-[#557744]
+                    text-white flex items-center justify-center
+                    text-xl font-bold">
+                    02
+                </div>
+
+
+                <h3 class="text-2xl font-bold mt-6">
+                    Healthy Weight
+                </h3>
+
+
+                <p class="text-[#557744] font-bold text-lg mt-2">
+                    18.5 – 24.9
+                </p>
+
+
+                <div class="w-full h-px bg-[#C5D4B7] my-5"></div>
+
+
+                <p class="text-gray-600 text-sm leading-7">
+                    This is the commonly used healthy BMI range
+                    for adults.
+                </p>
+
+            </div>
+
+
+            <!-- OVERWEIGHT -->
+            <div class="bg-[#F0E3CC] rounded-3xl p-7
+                border border-[#E2D2B4]
+                hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 rounded-2xl bg-[#B78945]
+                    text-white flex items-center justify-center
+                    text-xl font-bold">
+                    03
+                </div>
+
+
+                <h3 class="text-2xl font-bold mt-6">
+                    Overweight
+                </h3>
+
+
+                <p class="text-[#A56A2C] font-bold text-lg mt-2">
+                    25 – 29.9
+                </p>
+
+
+                <div class="w-full h-px bg-[#E0D0B3] my-5"></div>
+
+
+                <p class="text-gray-600 text-sm leading-7">
+                    A BMI from 25 to 29.9 is generally classified
+                    as overweight.
+                </p>
+
+            </div>
+
+
+            <!-- OBESITY -->
+            <div class="bg-[#EBD9D5] rounded-3xl p-7
+                border border-[#DEC5C0]
+                hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 rounded-2xl bg-[#A94E4E]
+                    text-white flex items-center justify-center
+                    text-xl font-bold">
+                    04
+                </div>
+
+
+                <h3 class="text-2xl font-bold mt-6">
+                    Obesity
+                </h3>
+
+
+                <p class="text-[#A94E4E] font-bold text-lg mt-2">
+                    30 or higher
+                </p>
+
+
+                <div class="w-full h-px bg-[#DCC4BF] my-5"></div>
+
+
+                <p class="text-gray-600 text-sm leading-7">
+                    A BMI of 30 or higher falls within the obesity
+                    category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK FACTS -->
+    <section class="bg-[#26352A] text-white py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-[#D6A85F] font-bold tracking-widest text-sm">
+                    QUICK FACTS
+                </p>
+
+                <h2 class="text-4xl font-bold mt-3">
+                    BMI At a Glance
+                </h2>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+
+                <div class="border border-gray-600 rounded-2xl p-7">
+
+                    <p class="text-[#D6A85F] text-4xl font-bold">
+                        18.5
+                    </p>
+
+                    <h3 class="font-bold mt-3">
+                        Healthy Range Starts
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mt-2 leading-6">
+                        The commonly used adult healthy BMI range
+                        starts at 18.5.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-gray-600 rounded-2xl p-7">
+
+                    <p class="text-[#D6A85F] text-4xl font-bold">
+                        24.9
+                    </p>
+
+                    <h3 class="font-bold mt-3">
+                        Healthy Range Ends
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mt-2 leading-6">
+                        A BMI up to 24.9 is within the commonly
+                        used healthy range.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-gray-600 rounded-2xl p-7">
+
+                    <p class="text-[#D6A85F] text-4xl font-bold">
+                        25+
+                    </p>
+
+                    <h3 class="font-bold mt-3">
+                        Overweight Range
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mt-2 leading-6">
+                        BMI from 25 to 29.9 is generally categorized
+                        as overweight.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-gray-600 rounded-2xl p-7">
+
+                    <p class="text-[#D6A85F] text-4xl font-bold">
+                        30+
+                    </p>
+
+                    <h3 class="font-bold mt-3">
+                        Obesity Range
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mt-2 leading-6">
+                        BMI of 30 or higher is generally categorized
+                        as obesity.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HEALTHY TIPS -->
+    <section id="tips"
+        class="bg-[#EFE7DA] py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+                <div>
+
+                    <p class="text-[#A56A2C] font-bold
+                        tracking-widest text-sm">
+                        HEALTHY LIFESTYLE
+                    </p>
+
+
+                    <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                        Small Habits.
+                        <br>
+                        Big Difference.
+                    </h2>
+
+
+                    <p class="text-gray-600 leading-8 mt-6 max-w-xl">
+                        Your health is influenced by many factors.
+                        Regular movement, balanced nutrition, hydration
+                        and sufficient rest can all contribute to
+                        overall wellbeing.
+                    </p>
+
+                </div>
+
+
+                <div class="grid sm:grid-cols-2 gap-5">
+
+
+                    <div class="bg-white rounded-2xl p-7 shadow-sm">
+
+                        <div class="text-3xl mb-4">
+                            🥗
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Balanced Meals
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-6 mt-3">
+                            Include a variety of nutritious foods
+                            in your daily meals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-white rounded-2xl p-7 shadow-sm">
+
+                        <div class="text-3xl mb-4">
+                            🏃
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Stay Active
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-6 mt-3">
+                            Include regular physical activity that
+                            suits your lifestyle.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-white rounded-2xl p-7 shadow-sm">
+
+                        <div class="text-3xl mb-4">
+                            💧
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Stay Hydrated
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-6 mt-3">
+                            Drink enough water throughout the day.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-white rounded-2xl p-7 shadow-sm">
+
+                        <div class="text-3xl mb-4">
+                            😴
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Sleep Well
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-6 mt-3">
+                            Give your body adequate time for rest
+                            and recovery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY BMI -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+
+        <div class="bg-white rounded-[35px] shadow-sm p-8 md:p-12">
+
+            <div class="text-center">
+
+                <p class="text-[#A56A2C] font-bold tracking-widest text-sm">
+                    WHY BMI?
+                </p>
+
+                <h2 class="text-4xl font-bold mt-3">
+                    A Simple Health Screening Tool
+                </h2>
+
+                <p class="text-gray-600 leading-8 max-w-3xl
+                    mx-auto mt-6">
+                    BMI uses your height and weight to produce a
+                    numerical value. It can be useful as a general
+                    screening measure, but it does not provide a
+                    complete picture of individual health.
+                </p>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-6 mt-10">
+
+
+                <div class="bg-[#F7F4ED] rounded-2xl p-6">
+
+                    <div class="text-3xl">
+                        📏
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-4">
+                        Height
+                    </h3>
+
+                    <p class="text-gray-600 text-sm mt-2 leading-6">
+                        Your height is used as part of the BMI
+                        calculation.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-[#F7F4ED] rounded-2xl p-6">
+
+                    <div class="text-3xl">
+                        ⚖️
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-4">
+                        Weight
+                    </h3>
+
+                    <p class="text-gray-600 text-sm mt-2 leading-6">
+                        Your body weight is combined with your
+                        height.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-[#F7F4ED] rounded-2xl p-6">
+
+                    <div class="text-3xl">
+                        📊
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-4">
+                        BMI Number
+                    </h3>
+
+                    <p class="text-gray-600 text-sm mt-2 leading-6">
+                        The calculation produces your BMI value.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+
+        <div class="bg-[#EEE8DD] rounded-3xl p-8 text-center">
+
+            <div class="text-3xl mb-4">
+                ℹ️
+            </div>
+
+            <h3 class="text-xl font-bold">
+                Important Information
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-7 mt-4">
+                BMI is a screening measure and does not directly
+                measure body fat, muscle mass or overall health.
+                It should not be used as a medical diagnosis.
+                Individual health can depend on many different
+                factors.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#18221B] text-gray-400">
+
+        <div class="max-w-7xl mx-auto px-6 py-10">
+
+            <div class="flex flex-col md:flex-row
+                justify-between gap-5">
+
+                <div>
+
+                    <h2 class="text-xl font-bold text-white">
+                        Fit<span class="text-[#D6A85F]">Check</span>
+                    </h2>
+
+                    <p class="text-sm mt-2">
+                        A simple BMI calculator for your wellness journey.
+                    </p>
+
+                </div>
+
+
+                <p class="text-sm">
+                    HTML • Tailwind CSS • JavaScript
+                </p>
+
+            </div>
+
+
+            <div class="border-t border-gray-700 mt-8 pt-6
+                text-center text-sm">
+
+                © 2026 FitCheck. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function calculateBMI() {
+
+            const age =
+                Number(document.getElementById("age").value);
+
+            const height =
+                Number(document.getElementById("height").value);
+
+            const weight =
+                Number(document.getElementById("weight").value);
+
+
+            const error =
+                document.getElementById("error");
+
+
+            error.classList.add("hidden");
+
+
+            if (!age || !height || !weight) {
+
+                error.textContent =
+                    "Please enter your age, height and weight.";
+
+                error.classList.remove("hidden");
+
+                return;
+            }
+
+
+            if (age < 18) {
+
+                error.textContent =
+                    "This calculator uses adult BMI categories.";
+
+                error.classList.remove("hidden");
+
+                return;
+            }
+
+
+            if (height <= 0 || weight <= 0) {
+
+                error.textContent =
+                    "Please enter valid height and weight values.";
+
+                error.classList.remove("hidden");
+
+                return;
+            }
+
+
+            /*
+                Convert height from centimetres
+                to metres.
+            */
+
+            const heightInMeters =
+                height / 100;
+
+
+            /*
+                BMI Formula:
+
+                BMI = weight / height²
+            */
+
+            const bmi =
+                weight /
+                (heightInMeters * heightInMeters);
+
+
+            const roundedBMI =
+                bmi.toFixed(1);
+
+
+            let category = "";
+            let message = "";
+            let position = 0;
+
+
+            /*
+                UNDERWEIGHT
+            */
+
+            if (bmi < 18.5) {
+
+                category =
+                    "Underweight";
+
+                message =
+                    "Your BMI is below the commonly used healthy adult range.";
+
+                position =
+                    Math.max(
+                        2,
+                        (bmi / 40) * 100
+                    );
+
+            }
+
+
+            /*
+                HEALTHY
+            */
+
+            else if (bmi < 25) {
+
+                category =
+                    "Healthy Weight";
+
+                message =
+                    "Your BMI falls within the commonly used healthy adult range.";
+
+                position =
+                    (bmi / 40) * 100;
+
+            }
+
+
+            /*
+                OVERWEIGHT
+            */
+
+            else if (bmi < 30) {
+
+                category =
+                    "Overweight";
+
+                message =
+                    "Your BMI is above the commonly used healthy adult range.";
+
+                position =
+                    (bmi / 40) * 100;
+
+            }
+
+
+            /*
+                OBESITY
+            */
+
+            else {
+
+                category =
+                    "Obesity";
+
+                message =
+                    "Your BMI falls within the obesity category.";
+
+                position =
+                    Math.min(
+                        98,
+                        (bmi / 40) * 100
+                    );
+
+            }
+
+
+            /*
+                DISPLAY RESULT
+            */
+
+            document.getElementById("bmiValue")
+                .textContent = roundedBMI;
+
+
+            document.getElementById("bmiCategory")
+                .textContent = category;
+
+
+            document.getElementById("bmiMessage")
+                .textContent = message;
+
+
+            /*
+                MOVE BMI SCALE MARKER
+            */
+
+            document.getElementById("marker")
+                .style.left = position + "%";
+
+
+            /*
+                Scroll slightly to the result
+                on smaller screens.
+            */
+
+            if (window.innerWidth < 1024) {
+
+                document.getElementById("bmiValue")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+            }
+
+        }
+
+
+        /*
+            RESET CALCULATOR
+        */
+
+        function resetCalculator() {
+
+            document.getElementById("age").value = "";
+
+            document.getElementById("height").value = "";
+
+            document.getElementById("weight").value = "";
+
+
+            document.getElementById("bmiValue")
+                .textContent = "--";
+
+
+            document.getElementById("bmiCategory")
+                .textContent = "Enter your details";
+
+
+            document.getElementById("bmiMessage")
+                .textContent =
+                "Your BMI result will appear here.";
+
+
+            document.getElementById("marker")
+                .style.left = "0%";
+
+
+            document.getElementById("error")
+                .classList.add("hidden");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
